@@ -4,6 +4,4 @@ from ProyectoWebApp.views import *
 urlpatterns = [
     path('', home, name="Home"),
     path('tienda/', tienda, name="Tienda"),
-    path('blog/', blog, name="Blog"),
-    path('contacto/', contacto, name="Contacto"),
 ]
