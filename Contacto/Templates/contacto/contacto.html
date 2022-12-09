@@ -4,11 +4,19 @@
 
 {% block content %}
 
-<div style="padding: 5px 20px; margin: 20px 50px; background-color: rgba(255, 255, 255, 0.2);">
+<div style="padding: 5px 20px; margin: 20px 350px; background-color: rgba(255, 255, 255, 0.2);">
+
+    {% if "valido" in request.GET %}
+        <p style="color: white; font-family: Arial, Helvetica, sans-serif;">Información enviada correctamente, gracias.</p>
+    {% endif %}
+    {% if "novalido" in request.GET %}
+        <p style="color: white; font-family: Arial, Helvetica, sans-serif;">La información no se pudo enviar. Por favor intente nuevamente.</p>
+    {% endif %}
+
     <form action="" method="POST">
         {% csrf_token %}
-        <table style="color: white;">{{miFormulario.as_table}}</table>
-        <input type="submit" value="Enviar">
+        <table style="color: white; font-family: Arial, Helvetica, sans-serif;">{{miFormulario.as_table}}</table>
+        <input type="submit" value="Enviar" style="background-color: rgba(24, 64, 8); color: white; font-family: Arial, Helvetica, sans-serif;">
     </form>
 </div>
 
