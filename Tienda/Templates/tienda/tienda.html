@@ -5,15 +5,22 @@
 {% block content %}
 
 <div class="container">
+    <div style="float: right; margin: 20px 0px;">
+        {% include "carro/widget.html" %}
+    </div>
+
     <div class="row">
 
         {% for producto in productos %}
-        <div class="col-md-3">
+        <div class="col-md-3 d-flex" style="margin: 20px 0px;">
             <div class="card" style="width: 100%;">
-                <img src="{{producto.imagen.url}}" class="card-img-top">
+                <img src="{{producto.imagen.url}}" class="card-img-top" style="height: 100%;">
                 <div class="card-body" style="text-align: center;">
                     <h7 class="card-title">{{producto.titulo}}</h7>
                     <p class="card-text">{{producto.precio}}&nbsp$</p>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="{% url 'carro:agregar' producto.id %}" class="btn btn-success">Agregar al carrito</a>
                 </div>
             </div>
         </div>

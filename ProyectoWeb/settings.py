@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'Contacto',
     'Tienda',
     'Carro',
+    'Autenticacion',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -68,6 +70,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'Carro.context_processor.importe_total_carro'
             ],
         },
     },
@@ -137,3 +140,5 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = "estudiopicc@gmail.com"
 EMAIL_HOST_PASSWORD = "btvzzriwrsvcpbgq"
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
