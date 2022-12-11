@@ -38,6 +38,21 @@
                 Total: $ {{importe_total_carro}}
             </td>
         </tr>
+
+        {% if request.session.carro.items %}
+        <td colspan="3" style="text-align:center">
+            <a href="../pedidos" class="btn btn-success">Comprar</a>
+        </td>
+        {% endif %}
+
+        {% if messages %}
+
+        {% for mensaje in messages %}
+        <div style="margin: 25px 0px;"><span class="alert alert-{{mensaje.tags}}">{{mensaje}}</span></div>
+        {% endfor %}
+
+        {% endif %}
+        
     </tfoot>
 
 </table>

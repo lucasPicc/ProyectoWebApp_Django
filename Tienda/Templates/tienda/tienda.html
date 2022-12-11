@@ -6,7 +6,11 @@
 
 <div class="container">
     <div style="float: right; margin: 20px 0px;">
+        {% if request.user.is_authenticated %}
         {% include "carro/widget.html" %}
+        {% else %}
+        <p class="alert alert-info">Para ver el carro, debes loguarte</p>
+        {% endif %}
     </div>
 
     <div class="row">
